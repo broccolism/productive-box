@@ -59,10 +59,10 @@ interface IRepo {
       /**
        * voting and counting
        */
-      if (hour >= 6 && hour < 12) morning++;
-      if (hour >= 12 && hour < 18) daytime++;
-      if (hour >= 18 && hour < 24) evening++;
-      if (hour >= 0 && hour < 6) night++;
+      if (hour >= 6 && hour < 13) morning++;
+      if (hour >= 13 && hour < 17) daytime++;
+      if (hour >= 17 && hour < 21) evening++;
+      if ((hour >= 21 && hour < 24) || (hour >= 0 && hour < 6)) night++;
     });
   });
 
