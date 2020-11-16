@@ -5,9 +5,7 @@ import { Octokit } from '@octokit/rest';
 import githubQuery from './githubQuery';
 import generateBarChart from './generateBarChart';
 import { userInfoQuery, createContributedRepoQuery, createCommittedDateQuery } from './queries';
-/**
- * get environment variable
- */
+
 config({ path: resolve(__dirname, '../.env') });
 
 interface IRepo {
@@ -16,9 +14,7 @@ interface IRepo {
 }
 
 (async() => {
-  /**
-   * First, get user id
-   */
+
   const userResponse = await githubQuery(userInfoQuery)
     .catch(error => console.error(`Unable to get username and id\n${error}`));
   const { login: username, id } = userResponse?.data?.viewer;
@@ -45,10 +41,10 @@ interface IRepo {
 
   if (!committedTimeResponseMap) return;
 
-  let morning = 0; // 6 - 12
-  let daytime = 0; // 12 - 18
-  let evening = 0; // 18 - 24
-  let night = 0; // 0 - 6
+  let morning = 0; 
+  let daytime = 0; 
+  let evening = 0; 
+  let night = 0; 
 
   committedTimeResponseMap.forEach(committedTimeResponse => {
     committedTimeResponse?.data?.repository?.ref?.target?.history?.edges.forEach(edge => {
