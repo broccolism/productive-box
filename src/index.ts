@@ -87,8 +87,6 @@ interface IRepo {
     return [...prev, line.join(' ')];
   }, []);
 
-  lines.push(" 🌞6-14 🌆14-17 🌃17-21 🌙21-6")
-
   /**
    * Finally, write into gist
    */
@@ -105,7 +103,7 @@ interface IRepo {
       [filename]: {
         // eslint-disable-next-line quotes
         filename: (morning + daytime) > (evening + night) ? "I'm an early 🐤" : "I'm a night 🦉",
-        content: lines.join('\n'),
+        content: lines.join('\n').push(" 🌞6-14 🌆14-17 🌃17-21 🌙21-6"),
       },
     },
   });
