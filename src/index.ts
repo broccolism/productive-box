@@ -87,6 +87,8 @@ interface IRepo {
     return [...prev, line.join(' ')];
   }, []);
 
+  lines.push(" 🌞6-14 🌆14-17 🌃17-21 🌙21-6")
+
   /**
    * Finally, write into gist
    */
