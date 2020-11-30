@@ -103,7 +103,7 @@ interface IRepo {
       [filename]: {
         // eslint-disable-next-line quotes
         filename: (morning + daytime) > (evening + night) ? "I'm an early 🐤" : "I'm a night 🦉",
-        content: " 🌞6-14 🌆14-17 🌃17-21 🌙21-6",
+        content: lines.join('\n') + "\n🌞6-14 🌆14-17 🌃17-21 🌙21-6",
       },
     },
   });
